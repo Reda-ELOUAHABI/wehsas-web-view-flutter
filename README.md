@@ -16,54 +16,60 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 # Steps 4 publish:
+## APP ICON
+- Add ICON to pubspec.yaml:
 
-1- Add ICON to pubspec.yaml:
+``flutter_launcher_icons: ^0.9.2``
 
-` flutter_launcher_icons: ^0.9.2
-
-flutter_icons:
+``flutter_icons:
 android: true
 ios: true
-image_path: "Assets/logo.png"`
+image_path: "Assets/logo.png"``
 
-- Create this folder with the wanted icon .Png + add it to pubspec also
+- Create Assets folder with the wanted icon .Png + add it to pubspec also
 
-## run the commands:
+- run the commands:
 
-flutter clean
-flutter pub get
-flutter pub run flutter_launcher_icons:main
+``flutter clean``
+``flutter pub get``
+``flutter pub run flutter_launcher_icons:main``
 
-2- apply rename package :
+## APP NAME
+- apply rename package :
 run commands:
 
-flutter pub global activate rename
-flutter pub global run rename --appname "THE WANTED NAME"
-flutter pub global run rename --bundleId (domaine.ProjectName)com.wehsas (== reversed domaine.ProjectName)
+``flutter pub global activate rename``
+``flutter pub global run rename --appname "THE WANTED NAME"``
+``flutter pub global run rename --bundleId (domaine.ProjectName)com.wehsas (== reversed domaine.ProjectName)``
 
-3- create a file: key.properties inside ./android
+## PLAY STORE KEYS ..
+
+- create a file: key.properties inside ./android
 fill it :
-`storePassword=redaeLOUAHABI1998 keyPassword=redaeLOUAHABI1998 keyAlias=upload storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks> `
-RUN as Administrator on cmd:
-make shore before that they you don't have any previous key files in c:/
-`keytool -genkey -v -keystore c:\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload `
-then enter the chosen Password
-move the generated file to android/app: and then change key.properties
+``storePassword=redaeLOUAHABI1998 keyPassword=redaeLOUAHABI1998 keyAlias=upload storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks>``
+
+
+- make sure that they you don't have any previous key files in c:/
+- RUN as Administrator on cmd:
+``keytool -genkey -v -keystore c:\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload``
+-then enter the chosen Password
+-move the generated file to android/app: and then change key.properties
 
 `storeFile=../app/upload-keystore.jks `
 now we configure:
 android/add/build.gradle:
 https://docs.flutter.dev/deployment/android#configure-signing-in-gradle
+
 by modifyng two parts on it : add part before android{},
 replace part in buildType{} by signingConfigs{} and buildType{},
 
-Now run ```flutter clean then ```flutter build appbundle
+Now run `flutter clean` then `flutter build appbundle`
 
 //then create app on console ,,,, No need for tuto I think
 
 ////////////////////use the same project in the future:
 make sure : android minsdk>21
-makeSure every manifest file of the three has internet connection Permission
+make sure that every manifest file of the three has internet connection Permission
 ///////////////////THEN///////////////////////
 PS E:\Mobile Project\Wehsas> flutter pub global run rename --bundleId com.wehsas
 ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
