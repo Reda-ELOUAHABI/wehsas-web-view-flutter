@@ -62,7 +62,7 @@ now we configure:
 android/add/build.gradle:
 https://docs.flutter.dev/deployment/android#configure-signing-in-gradle
 
-by modifyng two parts on it : add part before android{},
+by modifyng two parts on it : add part inside android{},
 replace part in buildType{} by signingConfigs{} and buildType{},
 
 Now run `flutter clean` then `flutter build appbundle`
