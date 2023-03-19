@@ -21,10 +21,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ``flutter_launcher_icons: ^0.9.2``
 
-``flutter_icons:
+``
+flutter_icons:
 android: true
 ios: true
-image_path: "Assets/logo.png"``
+image_path: "Assets/logo.png"
+``
 
 - Create Assets folder with the wanted icon .Png + add it to pubspec also
 
